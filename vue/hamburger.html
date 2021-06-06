@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue</title>
+    <meta name="description" content="Testing Vue and Alpine Load Times">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <p>Hello world, from Vue!</p>
+
+
+    <div id="wrapper">
+        <button id="hamburger" @click="open = !open">🍔</button>
+
+        <div
+            id="hamburger-content"
+            v-show="open"
+            style="border: 1px solid black; box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 5px; padding: 0.25em; width: 15em">
+        	<ul>
+                <li>Hamburger</li>
+                <li>Cheeseburger</li>
+                <li>Bacon Cheeseburger</li>
+                <li>Turkey Burger</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+    new Vue({
+      el: '#wrapper',
+      data: {
+        open: false,
+      },
+    });
+    </script>
+</body>
+
+</html>

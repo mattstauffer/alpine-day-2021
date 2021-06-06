@@ -1,0 +1,34 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alpine</title>
+    <meta name="description" content="Testing Vue and Alpine Load Times">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <p>Hello world, from Alpine!</p>
+
+    <div x-data="{ open: false }">
+        <button id="hamburger" @click="open = !open">🍔</button>
+
+        <div
+            id="hamburger-content"
+            x-show="open"
+            style="border: 1px solid black; box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 5px; display: none; padding: 0.25em; width: 15em">
+        	<ul>
+                <li>Hamburger</li>
+                <li>Cheeseburger</li>
+                <li>Bacon Cheeseburger</li>
+                <li>Turkey Burger</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"></script>
+</body>
+
+</html>
