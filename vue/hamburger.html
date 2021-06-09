@@ -14,11 +14,11 @@
 
 
     <div id="wrapper">
-        <button id="hamburger" @click="open = !open">🍔</button>
+        <button id="hamburger" @click="toggle">🍔</button>
 
         <div
             id="hamburger-content"
-            v-show="open"
+            v-show="show"
             style="border: 1px solid black; box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 5px; padding: 0.25em; width: 15em">
         	<ul>
                 <li>Hamburger</li>
@@ -34,7 +34,25 @@
     new Vue({
       el: '#wrapper',
       data: {
-        open: false,
+        show: false,
+      },
+      methods: {
+        toggle() {
+          this.show ? this.close() : this.open();
+        },
+        open() {
+          window.addEventListener('keydown', this.handleEscape);
+          this.show = true;
+        },
+        close() {
+          window.removeEventListener('keydown', this.handleEscape);
+          this.show = false;
+        },
+        handleEscape(event) {
+          if (event.code === 'Escape') {
+            this.close();
+          }
+        },
       },
     });
     </script>

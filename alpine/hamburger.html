@@ -12,7 +12,7 @@
 
     <p>Hello world, from Alpine!</p>
 
-    <div x-data="{ open: false }">
+    <div x-data="{ open: false }" x-on:keydown.escape.window="open = false">
         <button id="hamburger" @click="open = !open">🍔</button>
 
         <div
